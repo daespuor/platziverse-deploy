@@ -1,0 +1,30 @@
+---
+- include: deps.yml
+- name: Upload platziverse-web
+  copy:
+    src=platziverse-web
+    dest=/usr/local/src
+    mode=u=rwx,g=rwx,o=rx
+- name: Install node modules
+  command: npm install
+    chdir=/usr/local/src/platziverse-web
+    creates=/usr/local/src/platziverse-web/node_modules
+- name: Upload script
+  copy:
+    src=platziverse-web.service
+    dest=/lib/systemd/system
+    mode=u=rwx,g=rwx,o=rx
+- name: Upload config
+  copy:
+    src=platziverse-web.config
+    dest=/etc/nginx/sites-enabled
+    mode=u=rwx,g=rwx,o=rx
+- name: Run script
+  service:
+    name=platziverse-web
+    state=restarted
+    enabled=yes
+- name: Run config nginx
+  service:
+    name=nginx
+    state=reloaded

@@ -1,0 +1,10 @@
+---
+- name: Upload platziverse-utils files
+  copy: 
+    dest=/usr/local/src
+    src=platziverse-utils
+    mode=u=rwx,g=rwx,o=rx
+- name: Install node modules
+  command: npm install
+    chdir=/usr/local/src/platziverse-utils
+    creates=/usr/local/src/platziverse-utils/node_modules

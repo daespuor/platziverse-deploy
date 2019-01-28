@@ -1,0 +1,14 @@
+{
+  "name": "platziverse-fixis",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lint": "standard --fix"
+  },
+  "author": "Daniel Puerta",
+  "license": "MIT",
+  "devDependencies": {
+    "standard": "^11.0.1"
+  }
+}

@@ -1,0 +1,17 @@
+[Unit]
+Description=Platziverse Web
+After=network.target
+
+[Service]
+Environment=NODE_ENV=production
+Environment=endPoint=http://142.93.63.56
+Environment=serverHost=http://206.189.227.14
+Environment=mqttHost=mqtt://142.93.63.56
+Type=simple
+User=root
+WorkingDirectory=/usr/local/src/platziverse-web
+ExecStart=/usr/bin/npm start
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

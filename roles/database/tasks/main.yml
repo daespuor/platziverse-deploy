@@ -1,0 +1,9 @@
+---
+- name: 'Reloading postgres'
+  service:
+    name=postgresql
+    state=reloaded
+- name: 'Restarting redis'
+  service:
+    name=redis
+    state=restarted

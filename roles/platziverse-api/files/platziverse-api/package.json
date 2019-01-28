@@ -1,0 +1,32 @@
+{
+  "name": "platziverse-api",
+  "version": "1.0.0",
+  "description": "A simple Iot Plataform - api",
+  "main": "server.js",
+  "scripts": {
+    "lint": "standard --fix",
+    "start-dev": "SET DEBUG=platziverse:* && nodemon server.js",
+    "start": "DEBUG=platziverse:*  NODE_ENV=production  node server.js",
+    "test": "SET DEBUG=platziverse:* && ava tests/ --verbose"
+  },
+  "author": "Daniel Puerta",
+  "license": "MIT",
+  "devDependencies": {
+    "ava": "^0.25.0",
+    "nodemon": "^1.17.5",
+    "proxyquire": "^2.0.1",
+    "sinon": "^5.1.0",
+    "standard": "^11.0.1",
+    "supertest": "^3.1.0",
+    "platziverse-fixis": "file:../platziverse-fixis"
+  },
+  "dependencies": {
+    "debug": "^3.1.0",
+    "express": "^4.16.3",
+    "express-asyncify": "^1.0.0",
+    "express-jwt": "^5.3.1",
+    "express-jwt-permissions": "^1.2.1",
+    "jsonwebtoken": "^8.3.0",
+    "platziverse-db": "file:../platziverse-db"
+  }
+}
